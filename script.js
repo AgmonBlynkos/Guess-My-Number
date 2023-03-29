@@ -23,9 +23,18 @@ document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
   console.log(guess, typeof guess);
 
-  // When there is no input
-  if (!guess) {
-    displayMessage("🚫 No number!");
+  // When it's Agmon
+  if (guess === 666) {
+    document.querySelector(".message").textContent =
+      "T⍑ᒷ ꖎ𝙹∷↸ 𝙹⎓ ⍑ᒷꖎꖎ ╎ᓭ ∴ᔑ╎ℸ ̣ ╎リ⊣ ⎓𝙹∷ ||𝙹⚍";
+
+    // When it's nice
+  } else if (guess === 69) {
+    document.querySelector(".message").textContent = "Nice";
+
+    // When there is no input
+  } else if (!guess) {
+    displayMessage("🚫 No Number!");
 
     // When player wins
   } else if (guess === secretNumber) {
@@ -60,7 +69,7 @@ document.querySelector(".check").addEventListener("click", function () {
 
   document.querySelector(".again").addEventListener("click", function () {
     secretNumber = Math.trunc(Math.random() * 20) + 1;
-    score = 20;
+    score = 100;
     displayMessage("Start guessing...");
 
     document.querySelector(".score").textContent = score;
